@@ -1,0 +1,28 @@
+nav {display: flex;}
+nav div {
+  background-color: black;
+  margin: 2px;
+  color: white;
+  padding: 15px;
+  font-family: arial, sans-serif;
+}
+
+nav div:hover {
+  background-color: darkslategray;
+  transform: scale(1.2);
+  animation: navAnim 2s;
+}
+
+@keyframes navAnim {
+    from {background-color: black;}
+        0% {background-color: black;}
+        50% {background-color: gray;}
+        100% {background-color: darkslategray;}
+    to {background-color: darkslategray;}
+
+    from {transform: scale(1);}
+        0% {transform: scale(1);}
+        50% {transform: scale(1.1);}
+        100% {transform: scale(1.2);}
+    to {transform: scale(1.2);}
+}
