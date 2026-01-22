@@ -1,0 +1,70 @@
+b{
+    color: #E38E49;
+}
+h1, h2{
+    color: #0A3981;
+    position: relative;
+    animation: nameAnim 5s linear;
+}
+body{
+    background-color: #E38E49;
+}
+div{
+    background-color: #D4EBF8;
+    border-radius: 10px;
+    margin: auto;
+    max-width: 600px;
+}
+.container{
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 600px;
+}
+.image-grid img {
+  width: calc(50% - 10px);
+  height: auto;
+  object-fit: cover;
+}
+@media only screen and (max-width:800px){
+    .image-grid img {
+        width: 100%;
+    }
+}
+@keyframes nameAnim{
+    0% {
+        transform: translateY(-100px);
+    }
+    30% {
+        transform: translateY(0px);
+    }
+    40% {
+        transform: scaleX(-1);
+    }
+    50% {
+        transform: scaleX(1);
+    }
+    60% {
+        transform: scale(1.0);
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    80% {
+        transform: scale(1.2);
+    }
+    90% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}
