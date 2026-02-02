@@ -1,19 +1,73 @@
-nav{
+$lime: #e4fdc3;
+$mint: #8ae2c8;
+$orange: #e89b6a;
+$melon: #e2625c;
+
+h2{
+    color: $melon;
+}
+div{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+button{
+    background-color: $orange;
+    color: #FFFFFF;
+    padding: 10px;
+    border: none;
+}
+#kitchen{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.newsletter{
+    background-color: $lime;
+    padding: 20px;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    gap: 20px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+    img {
+        width: 300px;
+        max-width: 100%;
+        height: auto;
+    }
+    p {
+        margin-top: 10px;
+        text-align: center;
+        color: $melon;
+    }
+}
+.top{
     background-color: $orange;
     padding: 15px;
     text-align: center;
 
-    nav h2{
+    h2{
+        color: #FFFFFF;
+    }
+
+    p{
         color: #FFFFFF;
     }
 }
-h2{
-    color: $melon;
-}
-container{
-    background-color: $lime;
-    padding: 20px;
-}
-div{
+.bottom{
+    background-color: $mint;
+    padding: 15px;
     text-align: center;
+    
+    p{
+        color: #FFFFFF;
+    }
 }
