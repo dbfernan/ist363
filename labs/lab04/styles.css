@@ -1,0 +1,45 @@
+body{
+    font-family: Verdana, sans-serif;
+}
+
+div {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+}
+
+#campus {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.newsletter {
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
