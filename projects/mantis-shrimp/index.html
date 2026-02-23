@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mantis Shrimp Project</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <style>
+    nav .brand-logo {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 70%;
+    }
+   
+    #features .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #features .ability-card {
+      display: flex;
+    }
+    #features .ability-card .card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    #features .ability-card .card-content {
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loader" class="progress teal lighten-4" style="margin:0;">
+    <div class="indeterminate teal"></div>
+  </div>
+
+  <nav class="teal">
+    <div class="nav-wrapper container">
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+      <a class="brand-logo">Mantis Shrimp</a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#facts">Fun Facts</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-nav">
+    <li><a href="#about">About</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#facts">Fun Facts</a></li>
+  </ul>
+
+ 
+  <div class="parallax-container">
+    <div class="container" style="height: 100%; display:flex; align-items:center;">
+      <div class="white-text">
+        <h3 class="bold">The Mythical Mantis Shrimp</h3>
+        <h6>Ancient reef predator with unreal power, vision, and color abilities.</h6>
+        <a href="#features" class="btn waves-effect waves-light teal darken-2" style="margin-top:12px;">
+          Explore Features
+        </a>
+      </div>
+    </div>
+    <div class="parallax">
+      <img src="images/hero.jpg" alt="Mantis shrimp in reef">
+    </div>
+  </div>
+
+  <div id="about" class="section container scrollspy">
+    <h4>About The Species</h4>
+    <div class="chip teal white-text">Crustacean</div>
+    <div class="chip teal white-text">400M Years Old</div>
+    <div class="chip teal white-text">Reef Predator</div>
+
+    <p>
+      The mantis shrimp isn’t actually a shrimp; it’s a stomatopod, a powerful reef predator that’s been around for hundreds of millions of years. They live in warm, shallow waters near coral reefs and rocky bottoms where they carve out burrows and wait to ambush prey. Depending on the species, they hunt with either “smashing” clubs that break hard shells or “spearing” arms that grab fast-moving fish. They’re small compared to most ocean animals, but they act like a top-tier hunter because their reflexes are insanely quick and their strikes are super precise.
+    </p>
+
+    <p>
+      One of the coolest facts is that a mantis shrimp’s punch can be so fast it creates tiny bubbles in the water (cavitation), and those bubbles can collapse with enough force to add an extra shock to the strike. On top of that, their eyesight is legendary; they can detect polarized light and ultraviolet, and they have far more types of color receptors than humans. They also use bright colors and body patterns to communicate and defend territory, and some species form monogamous pairs that share a burrow and protect it together. Basically, they’re like a superhero creature: built for speed, vision, and power all at once.
+    </p>
+  </div>
+
+  <div id="features" class="section grey lighten-4 scrollspy">
+    <div class="container">
+      <h4 class="center">Features</h4>
+
+      <div class="row">
+     
+        <div class="col s12 m4 ability-card">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img class="responsive-img materialboxed" src="images/punch.gif" alt="Punch">
+              <span class="card-title">Powerful Punch</span>
+            </div>
+            <div class="card-content">
+              <p>
+                Can easily break shells of their prey and even aquarium glass. These claws can accelerate at a rate comparable to that of a .22 caliber bullet when fired, having around 1500 newtons of force with each swing/attack.
+                <span class="new badge teal" data-badge-caption="Wow!"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4 ability-card">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img class="responsive-img materialboxed" src="images/vision.gif" alt="Vision">
+              <span class="card-title">Versatile Vision</span>
+            </div>
+            <div class="card-content">
+              <p>
+                Can detect ultraviolet and polarized light (which is invisible to humans). Additionally, they have trinocular vision and can see depth with each eye independently, giving them the ability to track fast-moving prey with precision.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m4 ability-card">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img class="responsive-img materialboxed" src="images/color.gif" alt="Color">
+              <span class="card-title">Changing Colors</span>
+            </div>
+            <div class="card-content">
+              <p>
+                Can display flourescent colors that change for the sake of camouflage or communication. This ability is due to specialized cells called chromatophores that contain pigments and can expand or contract to show different colors.
+              </p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col s12 m4 ability-card">
+          <div class="card hoverable">
+            <div class="card-image">
+                <img class="responsive-img materialboxed" src="images/ca.gif" alt="Cavitation Shockwave">
+              <span class="card-title">Cavitation Shockwave</span>
+            </div>
+            <div class="card-content">
+              <p>
+                Their strike is so fast it can create tiny vapor bubbles in the water. When those bubbles collapse, they produce a shockwave that can help stun prey, even if the punch doesn’t fully connect.
+              </p>
+            </div>
+          </div>
+        </div>
+     
+        <div class="col s12 m4 ability-card">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img class="responsive-img materialboxed" src="images/armor.gif" alt="Armored Exoskeleton">
+              <span class="card-title">Armored Exoskeleton</span>
+            </div>
+            <div class="card-content">
+              <p>
+                Mantis shrimp are built to take impact. Their exoskeleton and striking clubs have layered, tough structures that resist cracking, letting them deliver repeated hits without damaging themselves.
+              </p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col s12 m4 ability-card">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img class="responsive-img materialboxed" src="images/reflexes.gif" alt="Lightning-Fast Reflexes">
+              <span class="card-title">Lightning-Fast Reflexes</span>
+            </div>
+            <div class="card-content">
+              <p>
+                Mantis shrimp have insanely fast reaction times, letting them track and strike moving prey in a split second. Their nervous system is built for speed, so they can time attacks with crazy accuracy, even in the chaotic movement of reef water.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div> 
+
+  <div id="facts" class="section container scrollspy">
+    <h4 class="center">Fun Facts</h4>
+
+    <ul class="tabs">
+      <li class="tab col s4"><a href="#fact1">Habitat</a></li>
+      <li class="tab col s4"><a href="#fact2">Rituals</a></li>
+    </ul>
+
+    <div id="fact1" class="col s12">
+      <p>Found mostly in tropical coral reef ecosystems.</p>
+    </div>
+    <div id="fact2" class="col s12">
+      <p>Engage in highly ritualized, non-lethal fights to settle territorial disputes over burrows.</p>
+    </div>
+
+    <ul class="collapsible">
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">info</i>Why are they called mantis shrimp?
+        </div>
+        <div class="collapsible-body">
+          <span>Their front limbs resemble a praying mantis, but they are crustaceans.</span>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">flash_on</i>How strong is their punch?
+        </div>
+        <div class="collapsible-body">
+          <span>The strike can reach speeds of over 50 mph underwater.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      © 2026 Mantis Shrimp Fan Page
+    </div>
+  </footer>
+
+  <div class="fixed-action-btn">
+    <a href="#about" class="btn-floating btn-large teal">
+      <i class="large material-icons">arrow_upward</i>
+    </a>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
