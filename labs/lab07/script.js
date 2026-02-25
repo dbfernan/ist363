@@ -34,6 +34,7 @@ let book ={
 
 console.log(book.title);
 console.log(book.author);
+
 if (book.isAvailable===true) {
     console.log("The book is available.");
 } else {
