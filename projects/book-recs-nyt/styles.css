@@ -3,6 +3,14 @@ body {
     flex-direction: column;
 }
 
+h1, h2, h3, h4, h5 {
+    font-family: 'Algreya', serif;
+}
+
+h6, a, li, span {
+    font-family: 'Merriweather', serif;
+}
+
 .navbar {
     transition: all 0.3s ease;
     padding: 20px;

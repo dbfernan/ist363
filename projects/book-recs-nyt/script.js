@@ -35,7 +35,7 @@ function displayBooks(books) {
             <img src="${book.book_image}" alt="${book.title}">
             </div>
             <div class="card-content">
-            <span class="card-title">${book.title}</span>
+            <p class="card-title">${book.title}</p>
             <p><strong>Author:</strong> ${book.author}</p>
             <p><strong>Description:</strong> ${book.description || "No description available."}</p>
             </div>
