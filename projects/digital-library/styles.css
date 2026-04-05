@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -12,7 +16,6 @@ h6, a, li, span {
 }
 
 .navbar {
-    transition: all 0.3s ease;
     padding: 20px;
 }
 
@@ -38,10 +41,16 @@ h6, a, li, span {
     z-index: 2;
 }
 
+#search-btn:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
 .book-card {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
 }
 
 .book-card img {
@@ -50,7 +59,21 @@ h6, a, li, span {
 }
 
 .card {
-    height: 100%;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.card-content {
+    flex-grow: 1;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    display: flex;
 }
