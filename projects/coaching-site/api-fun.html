@@ -1,40 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lessons | DF Tennis Coaching</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="master.css">
+    <title>Home | DF Tennis Coaching</title>
     <link rel="shortcut icon" type="image/x-icon" href="media/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        plum:'#3b1f6e',
+                        'plum-mid':'#52308f',
+                        purple:'#7c4dbd',
+                        'purple-lt':'#a97de0',
+                        lilac:'#e8dcff',
+                        'off-white':'#f8f7ff',
+                    },
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * { font-family: 'Nunito', sans-serif; }
+        body { animation: fadeIn 0.5s ease both; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @property --ga { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+        @keyframes spin { from { --ga: 0deg; } to { --ga: 360deg; } }
+        .header-img {
+            padding: 5px;
+            background: conic-gradient(from var(--ga), #7c4dbd, #3b1f6e, #a97de0, #3b1f6e, #7c4dbd);
+            animation: spin 6s linear infinite;
+            display: block; max-width: 100%;
+        }
+        .skip-link {
+            position: absolute; top: 1rem; left: -999px;
+            background: #3b1f6e; color: #fff; padding: 0.4rem 0.8rem;
+            text-decoration: none; border-radius: 6px; z-index: 100;
+        }
+        .skip-link:focus { left: 1rem; }
+    </style>
+    
 </head>
 
-<body>
+<body class="bg-off-white text-plum min-h-screen flex flex-col">
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="lessons.html">Lessons</a></li>
-            <li><a href="api-fun.html">API Fun</a></li>
-        </ul>
+    <a href="#main" class="skip-link">Skip to Content</a>
+
+    <!-- NAV -->
+    <nav class="bg-plum sticky top-0 z-50 shadow-md">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-white font-extrabold text-lg tracking-tight hover:text-lilac transition">
+                DF Tennis Coaching
+            </a>
+            <button id="hamburger" class="sm:hidden text-white/70 hover:text-white focus:outline-none" aria-label="Toggle navigation">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+            <ul class="hidden sm:flex gap-2 text-sm font-semibold">
+                <li><a href="index.html"   class="text-white/70 hover:text-white px-4 py-1.5 rounded-full hover:bg-plum-mid transition">Home</a></li>
+                <li><a href="lessons.html" class="text-white/70 hover:text-white px-4 py-1.5 rounded-full hover:bg-plum-mid transition">Lessons</a></li>
+                <li><a href="api-fun.html" class="bg-purple text-white px-4 py-1.5 rounded-full">API Fun</a></li>
+            </ul>
+        </div>
+        <div id="mobile-menu" class="hidden sm:hidden bg-plum border-t border-plum-mid px-6 pb-5">
+            <ul class="flex flex-col gap-3 pt-4 text-sm font-semibold">
+                <li><a href="index.html"   class="text-white/60 hover:text-white transition">Home</a></li>
+                <li><a href="lessons.html" class="text-white/60 hover:text-white transition">Lessons</a></li>
+                <li><a href="api-fun.html" class="text-white">API Fun</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <a href="#main" tabindex="1" class="skip">Skip to Content</a><br>
-    <img class="imborder" src="media/header.png" alt="David Fernando | CNY Tennis Coach">
-
-    <div class="center">
-
-        <h1>What Tennis Match Happened on my Birthday?</h1>   
-        <p>
-            (Under construction)
-        </p>
-
+    <!-- HEADER IMAGE -->
+    <div class="flex justify-center mt-8 px-4">
+        <img class="header-img max-w-2xl w-full" src="media/header.png" alt="David Fernando | CNY Tennis Coach">
     </div>
-    
-</body>
 
+    <!-- MAIN -->
+    <main id="main" class="flex-1 max-w-5xl mx-auto w-full px-6 py-12 text-center">
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-plum mb-3">What Tennis Match Happened on My Birthday?</h1>
+        <p class="text-plum/40 text-sm font-medium italic">(Under construction — check back soon!)</p>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-plum mt-10">
+        
+        <div class="max-w-5xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-5">
+            <div class="text-center sm:text-left">
+                <p class="text-white font-bold text-sm">DF Tennis Coaching</p>
+                <p class="text-white/40 text-xs mt-0.5">CNY · Syracuse, New York</p>
+            </div>
+            <div class="flex gap-4 items-center">
+                <a href="https://www.instagram.com/dbfernan06/" aria-label="Instagram" class="text-white/40 hover:text-lilac transition">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="mailto:dbfernan@syr.edu" aria-label="Email" class="text-white/40 hover:text-lilac transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </a>
+            </div>
+            <p class="text-white/25 text-xs">© 2026 David Fernando</p>
+        </div>
+
+    </footer>
+
+    <script>
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+</body>
 </html>
