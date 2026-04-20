@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Books – DF Digital Book Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        h1,h2,h3,h4,h5 { font-family: 'Alegreya', serif; }
+        body, p, a, label, button, span { font-family: 'Merriweather', serif; }
+
+        .book-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .book-card:hover { transform: scale(1.05); box-shadow: 0 12px 32px rgba(0,0,0,0.13); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { animation: fadeIn 0.4s ease both; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen bg-stone-50">
+
+    <nav class="bg-red-900/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+            <a href="index.html" class="text-white text-2xl font-bold" style="font-family:'Alegreya',serif">DF Books</a>
+            <ul class="hidden md:flex gap-6 text-sm text-red-200">
+                <li><a href="index.html#home-section"         class="hover:text-white">Home</a></li>
+                <li><a href="index.html#search-section"       class="hover:text-white">Search</a></li>
+                <li><a href="index.html#best-sellers-section" class="hover:text-white">Best Sellers</a></li>
+                <li><a href="my-books.html" class="text-white flex items-center gap-1 font-semibold">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M5 3a2 2 0 0 0-2 2v16l9-4 9 4V5a2 2 0 0 0-2-2H5z"/></svg>
+                    My Books
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="bg-red-900 py-12 px-4 text-center">
+        <h1 class="text-white text-4xl md:text-5xl font-bold drop-shadow mb-2">My Books</h1>
+        <p class="text-red-300 text-sm">Your personal reading collection</p>
+    </div>
+
+    <main class="max-w-6xl mx-auto w-full px-4 py-12 flex-1">
+
+        <!-- Stats bar -->
+        <div class="flex items-center justify-between mb-8">
+            <p id="book-count" class="text-stone-500 text-sm"></p>
+            <button id="clear-btn"
+                class="hidden text-xs text-red-700 border border-red-200 hover:bg-red-50 px-4 py-1.5 rounded-lg transition-colors">
+                Clear All
+            </button>
+        </div>
+
+        <!-- Empty state -->
+        <div id="empty-state" class="hidden flex-col items-center justify-center py-24 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-stone-300 mb-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 3a2 2 0 0 0-2 2v16l9-4 9 4V5a2 2 0 0 0-2-2H5z"/>
+            </svg>
+            <h3 class="text-2xl font-bold text-stone-400 mb-2">No saved books yet</h3>
+            <p class="text-stone-400 text-sm mb-6">Click the bookmark icon on any book to save it here.</p>
+            <a href="index.html" class="bg-red-900 hover:bg-red-800 text-white text-sm font-semibold px-7 py-2.5 rounded-lg shadow transition-colors">
+                Browse Books
+            </a>
+        </div>
+
+        <!-- Books grid -->
+        <div id="books-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </main>
+
+    <footer class="mt-auto bg-red-900/80 backdrop-blur-md text-red-200 text-center text-sm py-5">
+        © 2026 DF Digital Book Library
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
