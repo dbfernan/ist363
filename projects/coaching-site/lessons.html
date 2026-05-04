@@ -32,18 +32,12 @@
 
     <style>
         * { font-family: 'Nunito', sans-serif; }
-        body { animation: fadeIn 0.5s ease both; }
+        html { background: #3b1f6e; }
+        body { background: #f8f7ff; }
+        main { animation: fadeIn 0.5s ease both; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(6px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-        @property --ga { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
-        @keyframes spin { from { --ga: 0deg; } to { --ga: 360deg; } }
-        .header-img {
-            padding: 5px;
-            background: conic-gradient(from var(--ga), #7c4dbd, #3b1f6e, #a97de0, #3b1f6e, #7c4dbd);
-            animation: spin 6s linear infinite;
-            display: block; max-width: 100%;
         }
         .skip-link {
             position: absolute; top: 1rem; left: -999px;
@@ -57,19 +51,19 @@
             box-shadow: 0 0 0 3px #e8dcff;
             border-color: #7c4dbd;
         }
-
     </style>
-    
 </head>
 
 <body class="bg-off-white text-plum min-h-screen flex flex-col">
 
     <a href="#main" class="skip-link">Skip to Content</a>
 
+
     <!-- NAV -->
     <nav class="bg-plum sticky top-0 z-50 shadow-md">
         <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="index.html" class="text-white font-extrabold text-lg tracking-tight hover:text-lilac transition">
+            <a href="index.html" class="text-white font-extrabold text-lg tracking-tight hover:text-lilac transition flex items-center gap-2">
+                <img src="media/favicon.ico" class="w-5 h-5" alt="">
                 DF Tennis Coaching
             </a>
             <button id="hamburger" class="sm:hidden text-white/70 hover:text-white focus:outline-none" aria-label="Toggle navigation">
@@ -92,10 +86,6 @@
         </div>
     </nav>
 
-    <!-- HEADER IMAGE -->
-    <div class="flex justify-center mt-8 px-4">
-        <img class="header-img max-w-2xl w-full" src="media/header.png" alt="David Fernando | CNY Tennis Coach">
-    </div>
 
     <!-- MAIN -->
     <main id="main" class="flex-1 max-w-5xl mx-auto w-full px-6 py-12">
@@ -116,13 +106,14 @@
                 </div>
             </div>
 
-            <p class="max-w-lg mx-auto text-sm text-plum/60 font-medium leading-relaxed">
+            <p class="max-w-2xl mx-auto text-sm text-plum/60 font-medium leading-relaxed">
                 As a new coach in the area, I want players to have an accessible option to reach the next level without having to break the bank. Prices are subject to change over time.
             </p>
         </div>
 
-        <!-- Contact Form -->
-        <div class="max-w-md mx-auto">
+
+        <!-- FORM -->
+        <div class="max-w-2xl mx-auto">
             <h2 class="text-2xl font-extrabold text-plum text-center mb-6">Get in Touch</h2>
 
             <div class="bg-white border border-lilac rounded-2xl p-8 flex flex-col gap-5 shadow-sm">
@@ -137,6 +128,41 @@
                         class="w-full border border-lilac rounded-xl px-4 py-3 text-plum text-sm placeholder-plum/30 transition">
                 </div>
                 <div>
+                    <p class="block text-xs font-bold uppercase tracking-widest text-purple mb-2">Goal</p>
+                    <div class="flex gap-3">
+                        <label class="flex-1 flex items-center gap-3 border-2 border-lilac rounded-xl px-4 py-3 cursor-pointer hover:border-purple transition has-[:checked]:border-purple has-[:checked]:bg-lilac">
+                            <input type="radio" name="goal" value="fun" class="accent-purple shrink-0">
+                            <span class="text-sm font-semibold text-plum">Fun-Focused</span>
+                        </label>
+                        <label class="flex-1 flex items-center gap-3 border-2 border-lilac rounded-xl px-4 py-3 cursor-pointer hover:border-purple transition has-[:checked]:border-purple has-[:checked]:bg-lilac">
+                            <input type="radio" name="goal" value="competition" class="accent-purple shrink-0">
+                            <span class="text-sm font-semibold text-plum">Competition-Focused</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <p class="block text-xs font-bold uppercase tracking-widest text-purple mb-2">Level</p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <label class="flex-1 flex items-center gap-3 border-2 border-lilac rounded-xl px-4 py-3 cursor-pointer hover:border-purple transition has-[:checked]:border-purple has-[:checked]:bg-lilac">
+                            <input type="radio" name="level" value="beginner" class="accent-purple shrink-0">
+                            <span class="text-sm font-semibold text-plum">Beginner <span class="text-plum/45 font-medium">(0–1 yrs)</span></span>
+                        </label>
+                        <label class="flex-1 flex items-center gap-3 border-2 border-lilac rounded-xl px-4 py-3 cursor-pointer hover:border-purple transition has-[:checked]:border-purple has-[:checked]:bg-lilac">
+                            <input type="radio" name="level" value="intermediate" class="accent-purple shrink-0">
+                            <span class="text-sm font-semibold text-plum">Intermediate <span class="text-plum/45 font-medium">(2–3 yrs)</span></span>
+                        </label>
+                        <label class="flex-1 flex items-center gap-3 border-2 border-lilac rounded-xl px-4 py-3 cursor-pointer hover:border-purple transition has-[:checked]:border-purple has-[:checked]:bg-lilac">
+                            <input type="radio" name="level" value="advanced" class="accent-purple shrink-0">
+                            <span class="text-sm font-semibold text-plum">Advanced <span class="text-plum/45 font-medium">(4+ yrs)</span></span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label for="fav-player" class="block text-xs font-bold uppercase tracking-widest text-purple mb-1.5">Favorite Tennis Player?</label>
+                    <input type="text" id="fav-player" placeholder="e.g. Roger Federer"
+                        class="w-full border border-lilac rounded-xl px-4 py-3 text-plum text-sm placeholder-plum/30 transition">
+                </div>
+                <div>
                     <label for="message" class="block text-xs font-bold uppercase tracking-widest text-purple mb-1.5">Message</label>
                     <textarea id="message" rows="4" placeholder="Your message..."
                         class="w-full border border-lilac rounded-xl px-4 py-3 text-plum text-sm placeholder-plum/30 resize-none transition"></textarea>
@@ -148,6 +174,7 @@
             </div>
         </div>
     </main>
+
 
     <!-- FOOTER -->
     <footer class="bg-plum mt-10">

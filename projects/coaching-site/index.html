@@ -32,18 +32,12 @@
 
     <style>
         * { font-family: 'Nunito', sans-serif; }
-        body { animation: fadeIn 0.5s ease both; }
+        html { background: #3b1f6e; }
+        body { background: #f8f7ff; }
+        main { animation: fadeIn 0.5s ease both; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(6px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-        @property --ga { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
-        @keyframes spin { from { --ga: 0deg; } to { --ga: 360deg; } }
-        .header-img {
-            padding: 5px;
-            background: conic-gradient(from var(--ga), #7c4dbd, #3b1f6e, #a97de0, #3b1f6e, #7c4dbd);
-            animation: spin 6s linear infinite;
-            display: block; max-width: 100%;
         }
         .skip-link {
             position: absolute; top: 1rem; left: -999px;
@@ -59,11 +53,13 @@
 
     <a href="#main" class="skip-link">Skip to Content</a>
 
+
     <!-- NAV -->
     <nav class="bg-plum sticky top-0 z-50 shadow-md">
 
         <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="index.html" class="text-white font-extrabold text-lg tracking-tight hover:text-lilac transition">
+            <a href="index.html" class="text-white font-extrabold text-lg tracking-tight hover:text-lilac transition flex items-center gap-2">
+                <img src="media/favicon.ico" class="w-5 h-5" alt="">
                 DF Tennis Coaching
             </a>
             <button id="hamburger" class="sm:hidden text-white/70 hover:text-white focus:outline-none" aria-label="Toggle navigation">
@@ -87,57 +83,95 @@
 
     </nav>
 
-    <!-- HEADER IMAGE -->
-    <div class="flex justify-center mt-8 px-4">
-        <img class="header-img max-w-2xl w-full" src="media/header.png" alt="David Fernando | CNY Tennis Coach">
-    </div>
 
     <!-- MAIN -->
     <main id="main" class="flex-1 max-w-5xl mx-auto w-full px-6 py-12">
 
-        <div class="text-center mb-12">
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-plum mb-4">
-                Local Coaching From a Seasoned Player
-            </h1>
-            <p class="max-w-2xl mx-auto text-base leading-relaxed text-plum/70 font-medium">
-                Hello, I'm David! Tennis has been one of my biggest passions for many years, and by using my knowledge of the sport and high-level competitive experience, I want to play a part in the stories of future generations in CNY through coaching! As I'm now attending Syracuse University, my days of Junior-level USTA tournaments and Varsity are over — but I'm still playing and competing in various clubs and leagues. As a coach I aim to teach form, tactics, mentality, and more, all while having fun and developing passion for tennis in new players!
-            </p>
-        </div>
 
-        <div class="flex flex-col sm:flex-row gap-10 items-start">
-            <div class="flex-1">
-                <img class="w-full max-w-md rounded-xl border-2 border-lilac shadow-sm" src="media/photos.png" alt="Various Photos of David">
-            </div>
-            <div class="flex-1">
-                <h2 class="text-2xl font-extrabold text-plum mb-5">Playing & Coaching Experience</h2>
-                <ul class="space-y-3 text-sm text-plum/75 font-medium">
-                    <li class="flex gap-3 items-start">
-                        <span class="mt-1 w-2 h-2 rounded-full bg-purple shrink-0"></span>
-                        Played on FM's Varsity Team from 7th–12th Grade
-                    </li>
-                    <li class="flex gap-3 items-start">
-                        <span class="mt-1 w-2 h-2 rounded-full bg-purple shrink-0"></span>
-                        #1 Singles Player from 11th–12th Grade (COVID-19 was the year before)
-                    </li>
-                    <li class="flex gap-3 items-start">
-                        <span class="mt-1 w-2 h-2 rounded-full bg-purple shrink-0"></span>
-                        Won many Junior-level USTA Tournaments
-                    </li>
-                    <li class="flex gap-3 items-start">
-                        <span class="mt-1 w-2 h-2 rounded-full bg-purple shrink-0"></span>
-                        Played in several Regional & Sectional-level Championships
-                    </li>
-                    <li class="flex gap-3 items-start">
-                        <span class="mt-1 w-2 h-2 rounded-full bg-purple shrink-0"></span>
-                        Completed USTA's Coaching Workshop in Parsippany, NJ
-                    </li>
-                </ul>
-                <p class="text-sm text-plum/65 leading-relaxed mt-5 font-medium">
-                    Additionally, I've volunteered as a coach for <strong class="text-plum">Aceing Autism</strong>, worked as an assistant coach for <strong class="text-plum">Drumlins' Summer Tennis Camp</strong>, and coached at <strong class="text-plum">FM's Summer Tennis Camp in 2025!</strong>
+        <!-- HERO -->
+        <div class="flex flex-col sm:flex-row gap-10 items-center mb-14">
+            <div class="flex-1 text-center sm:text-left">
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-plum mb-4">
+                    Local Coaching From a Seasoned Player
+                </h1>
+                <p class="text-base leading-relaxed text-plum/70 font-medium max-w-xl mx-auto sm:mx-0">
+                    Hello, I'm David! Tennis has been one of my biggest passions for many years, and by using my knowledge of the sport and high-level competitive experience, I want to play a part in the stories of future generations in CNY through coaching! As I'm now attending Syracuse University, my days of Junior-level USTA tournaments and Varsity are over — but I'm still playing and competing in various clubs and leagues. As a coach I aim to teach form, tactics, mentality, and more, all while having fun and developing passion for tennis in new players!
                 </p>
             </div>
+
+            <!-- CAROUSEL -->
+            <div class="flex-1 flex justify-center sm:justify-end">
+                <div class="relative w-full max-w-md overflow-hidden rounded-xl border-2 border-lilac shadow-sm" id="carousel">
+                    <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out">
+                        <img src="media/image1.jpg" class="w-full shrink-0 object-cover aspect-[3/4]" alt="David playing tennis">
+                        <img src="media/image2.jpg" class="w-full shrink-0 object-cover aspect-[3/4]" alt="David playing tennis">
+                        <img src="media/image3.jpg" class="w-full shrink-0 object-cover aspect-[3/4]" alt="David playing tennis">
+                        <img src="media/image4.jpg" class="w-full shrink-0 object-cover aspect-[3/4]" alt="David with USTA trophy">
+                        <img src="media/image5.jpg" class="w-full shrink-0 object-cover aspect-[3/4]" alt="David at US Open 2015">
+                        <img src="media/image6.jpg" class="w-full shrink-0 object-cover aspect-[3/4]" alt="David on court">
+                    </div>
+                    <button id="prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-plum/70 hover:bg-plum text-white rounded-full w-8 h-8 flex items-center justify-center transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button id="next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-plum/70 hover:bg-plum text-white rounded-full w-8 h-8 flex items-center justify-center transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                    <div id="dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- EXPERIENCE -->
+        <div class="text-center mb-4">
+            <h2 class="text-2xl font-extrabold text-plum mb-2">Playing & Coaching Experience</h2>
+            <p class="text-sm text-plum/45 font-medium mb-8">A track record built on the court</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+                <div class="bg-white border-2 border-lilac rounded-2xl px-6 py-5 text-left shadow-sm">
+                    <p class="text-xs font-bold uppercase tracking-widest text-purple/60 mb-2">Varsity</p>
+                    <p class="text-sm font-bold text-plum leading-snug">Played on FM's Varsity Team from 7th–12th Grade</p>
+                </div>
+                <div class="bg-white border-2 border-lilac rounded-2xl px-6 py-5 text-left shadow-sm">
+                    <p class="text-xs font-bold uppercase tracking-widest text-purple/60 mb-2">Singles</p>
+                    <p class="text-sm font-bold text-plum leading-snug">#1 Singles Player from 11th–12th Grade</p>
+                </div>
+                <div class="bg-white border-2 border-lilac rounded-2xl px-6 py-5 text-left shadow-sm">
+                    <p class="text-xs font-bold uppercase tracking-widest text-purple/60 mb-2">USTA Juniors</p>
+                    <p class="text-sm font-bold text-plum leading-snug">Won many Junior-level USTA Tournaments</p>
+                </div>
+                <div class="bg-white border-2 border-lilac rounded-2xl px-6 py-5 text-left shadow-sm">
+                    <p class="text-xs font-bold uppercase tracking-widest text-purple/60 mb-2">Championships</p>
+                    <p class="text-sm font-bold text-plum leading-snug">Played in Regional & Sectional-level Championships</p>
+                </div>
+                <div class="bg-white border-2 border-lilac rounded-2xl px-6 py-5 text-left shadow-sm">
+                    <p class="text-xs font-bold uppercase tracking-widest text-purple/60 mb-2">Certified</p>
+                    <p class="text-sm font-bold text-plum leading-snug">Completed USTA's Coaching Workshop in Parsippany, NJ</p>
+                </div>
+                <div class="bg-white border-2 border-lilac rounded-2xl px-6 py-5 text-left shadow-sm">
+                    <p class="text-xs font-bold uppercase tracking-widest text-purple/60 mb-2">Community</p>
+                    <p class="text-sm font-bold text-plum leading-snug">Coached at Aceing Autism, Drumlins Camp & FM's Summer Camp '25</p>
+                </div>
+            </div>
+
+            <!-- LESSONS -->
+            <a href="lessons.html" class="mt-2 block w-full bg-white border-2 border-purple rounded-2xl px-6 py-5 text-center shadow-sm hover:bg-lilac transition group">
+                <p class="text-lg font-extrabold text-plum group-hover:text-plum transition flex items-center justify-center gap-2">
+                    Lesson Information
+                    <svg class="w-4 h-4 text-purple group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </p>
+            </a>
+
+            <!-- API FUN -->
+            <a href="api-fun.html" class="mt-3 block w-full bg-white border-2 border-lilac rounded-2xl px-6 py-5 text-center shadow-sm hover:bg-lilac hover:border-purple transition group">
+                <p class="text-lg font-extrabold text-plum transition flex items-center justify-center gap-2">
+                    API Fun
+                    <svg class="w-4 h-4 text-purple group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </p>
+            </a>
         </div>
     </main>
+
 
     <!-- FOOTER -->
     <footer class="bg-plum mt-10">
@@ -164,6 +198,31 @@
         document.getElementById('hamburger').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
+
+        const track = document.getElementById('carousel-track');
+        const dotsContainer = document.getElementById('dots');
+        const total = track.children.length;
+        let current = 0;
+
+        for (let i = 0; i < total; i++) {
+            const d = document.createElement('button');
+            d.className = `w-2 h-2 rounded-full transition ${i === 0 ? 'bg-white' : 'bg-white/40'}`;
+            d.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(d);
+        }
+
+        function goTo(n) {
+            current = (n + total) % total;
+            track.style.transform = `translateX(-${current * 100}%)`;
+            [...dotsContainer.children].forEach((d, i) => {
+                d.className = `w-2 h-2 rounded-full transition ${i === current ? 'bg-white' : 'bg-white/40'}`;
+            });
+        }
+
+        document.getElementById('prev').addEventListener('click', () => goTo(current - 1));
+        document.getElementById('next').addEventListener('click', () => goTo(current + 1));
+
+        setInterval(() => goTo(current + 1), 4000);
     </script>
     
 </body>
