@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-plum: #3b1f6e;
+  --color-plum-mid: #52308f;
+  --color-purple-DEFAULT: #7c4dbd;
+  --color-purple-lt: #a97de0;
+  --color-lilac: #e8dcff;
+  --color-off-white: #f8f7ff;
+}
+
+* { font-family: 'Nunito', sans-serif; }
+html { background: #3b1f6e; }
+body { background: #f8f7ff; }
+
+.page-enter {
+  animation: fadeIn 0.5s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up {
+  animation: slideUp 0.4s ease both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.pulse-ring {
+  animation: pulse-ring 1.2s ease-out infinite;
+}
+
+input[type='date']:focus,
+input[type='text']:focus,
+input[type='email']:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #e8dcff;
+  border-color: #7c4dbd;
+}
+
+.skip-link {
+  position: absolute;
+  top: 1rem;
+  left: -999px;
+  background: #3b1f6e;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  text-decoration: none;
+  border-radius: 6px;
+  z-index: 100;
+}
+.skip-link:focus { left: 1rem; }
